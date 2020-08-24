@@ -1,18 +1,56 @@
 import cv2
+import time
 
-cap = cv2.VideoCapture(0)
+global pnum
+pnum=0
 
-print('width :%d, height : %d' % (cap.get(3), cap.get(4)))
+def model() :
+    while(True):
+
+        if cv2.waitKey(1) == ord('c'):
+            global pnum
+            pnum+=1
+            return True
+        else :
+            return False
+
+cam = cv2.VideoCapture(0)
+
+if cam.isOpened() == False: #카메라 생성 확인
+    print ('CAM Error')
+    exit()
+
+print('width :%d, height : %d' % (cam.get(3), cam.get(4)))
+text = 'Smile~'
+count = 100
 
 while(True):
-    ret, frame = cap.read()    # Read 결과와 frame
+    ret, frame = cam.read()    # Read 결과와 frame
 
     if(ret) :
 
 
-        cv2.imshow('frame_color', frame)    # 컬러 화면 출력
 
-        if cv2.waitKey(1) == ord('q'):
+
+        if model():
+
+
+
+            cv2.putText(frame, text, (100, 100), cv2.FONT_ITALIC, 1, (255, 0, 0))
+            #cv2.imshow('web_cam', frame)
+
+
+            cv2.imwrite('picture' + str(pnum) + '.jpg', frame)
+
+        cv2.imshow('web_cam', frame)
+
+        if cv2.waitKey(1) == 27:
             break
-cap.release()
+cam.release()
 cv2.destroyAllWindows()
+
+
+
+
+
+
