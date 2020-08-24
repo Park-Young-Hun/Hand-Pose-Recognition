@@ -7,7 +7,7 @@ $ pip install opencv-python tensorflow
 $ python run.py
 ```
 
-![Result](/output.gif?raw=true "Result")
+
 
 [*mediapipe-models*]: https://github.com/junhwanjang/mediapipe-models/tree/master/palm_detection/mediapipe_models
 [*mediapipe*]: https://github.com/google/mediapipe/tree/master/mediapipe/models
