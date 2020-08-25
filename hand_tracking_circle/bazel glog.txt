@@ -1,0 +1,5 @@
+bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python38//python.exe" mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu
+
+
+
+몇몇 플래그들은 glog의 출력 작용에 영향을 끼친다. 당신의 머신에 Google gflags라이브러리가 설치되어 있다면 , 커맨드 라인에 플래그를 전달하도록 핟는 configure스크립트( 이 스트립트에 대한 자세앟 ㄴ내용은 패키지에 있는 INSTALL)가 자동으로 감지하고 사용한다. 
