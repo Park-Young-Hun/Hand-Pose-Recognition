@@ -1,7 +1,7 @@
 import os
 import sys
 import argparse
-from train_utils import make_label,load_data, build_model
+from .train_utils import make_label,load_data, build_model
 
 #softmax -> crossentropy
 def main(dirname):
@@ -13,7 +13,7 @@ def main(dirname):
     history=model.fit(x_train,y_train,epochs=100,batch_size=16,validation_data=(x_test,y_test))
     score, acc = model.evaluate(x_test,y_test,batch_size=16,verbose=0)
     print('Test performance: accuracy={0}, loss={1}'.format(acc, score))
-    model.save('model.h5')
+    model.save('HPRmodel.h5')
 
     
 if __name__=='__main__':

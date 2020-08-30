@@ -4,7 +4,7 @@ import sys
 import argparse
 
 def main(input_data_path,output_data_path):
-    comp='bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://python38//python.exe" mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu'
+    comp='bazel build -c opt --define MEDIAPIPE_DISABLE_GPU=1 --action_env PYTHON_BIN_PATH="C://Users/pc/anaconda3/envs/test/python.exe" mediapipe/examples/desktop/hand_tracking:hand_tracking_cpu'
     #명령어 컴파일
     cmd='start bazel-bin/mediapipe/examples/desktop/hand_tracking/hand_tracking_cpu --calculator_graph_config_file=mediapipe/graphs/hand_tracking/hand_tracking_desktop_live.pbtxt'
     #미디어 파이프 명령어 저장listfile
